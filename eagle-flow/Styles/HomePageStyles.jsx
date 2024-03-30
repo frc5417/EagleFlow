@@ -31,89 +31,6 @@ export const commonStyles = StyleSheet.create({
         bottom: 0,
     },
 
-    image: {
-        height: screenHeight / 10,
-        width: screenWidth / 15,
-        aspectRatio: 1,
-        alignSelf: 'center',
-        marginVertical: screenHeight / 75,
-    },
-
-    sideMenu: {
-        alignContent: 'center',
-        alignSelf: 'center',
-        width: screenWidth * 0.175,
-        height: screenHeight / 1.25,
-        backgroundColor: 'rgba(210, 183, 183, 0.4)',
-        borderRadius: 30,
-        marginLeft: screenWidth / 42.5,
-    },
-
-    namedCommandsText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / 50,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    pathsText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / 50,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    telemetryText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / 50,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    fieldText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / 50,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    settingsText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / 50,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    documentationText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / 50,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    newProjectContainer: {
-        marginTop: screenHeight / 50,
-        backgroundColor: 'transparent',
-        borderRadius: 25,
-        alignSelf: 'center',
-        width: screenWidth * 0.125,
-        height: screenHeight * 0.1,
-    },
-
-    newProjectText: {
-        marginTop: 20,
-        fontFamily: 'K2D-SemiBold',
-        fontSize: 15 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
     // _5417LogoStyle: {
     //     height: screenHeight / 27.5,
     //     width: screenWidth / 50,
@@ -159,7 +76,7 @@ export const blueAutonStyles = StyleSheet.create({
 
 export const redAutonStyles = StyleSheet.create({
     redAutos: {
-        marginRight: screenWidth / 20,
+        marginLeft: screenWidth / 20,
         width: screenWidth * 0.325,
         height: screenHeight / 1.25,
         backgroundColor: 'rgba(204, 53, 65, 0.8)',

@@ -7,6 +7,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Welcome from './Welcome';
 import Home from './HomePage';
+import Named from './NamedCommands';
+import Menu from './Menu';
 
 const Stack = createStackNavigator();
 
@@ -15,11 +17,13 @@ export default function App() {
     <NavigationContainer>
 
       <Stack.Navigator
-        initialRouteName = "Home"
+        initialRouteName = "Welcome"
         screenOptions = {{headerShown: false}}
       >
         <Stack.Screen name = "Welcome" component = {Welcome} />
         <Stack.Screen name = "Home" component = {Home} />
+        <Stack.Screen name = "Named" component = {Named} />
+        <Stack.Screen name = "Menu" component = {Menu} />
       </Stack.Navigator>
     </NavigationContainer>
   );
