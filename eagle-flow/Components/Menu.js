@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import { StatusBar } from "expo-status-bar";
 import { Text, View, Pressable, Modal, Image, Dimensions, Alert } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { MenuStyles } from "./Styles/MenuStyles";
-import RobotImg from './assets/Images/RobotIcon.png';
+import { MenuStyles } from "../Styles/MenuStyles";
+import RobotImg from '../assets/Images/RobotIcon.png';
 
 export default class Menu extends Component {
     constructor(props) {

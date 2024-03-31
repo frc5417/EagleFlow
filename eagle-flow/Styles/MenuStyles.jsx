@@ -110,7 +110,7 @@ export const MenuStyles = StyleSheet.create({
     newProjectText: {
         marginTop: screenHeight / 50,
         fontFamily: 'K2D-SemiBold',
-        fontSize: 15 * fontScaleFactor,
+        fontSize: 14 * fontScaleFactor,
         alignSelf: 'center',
         color: 'white',
     },

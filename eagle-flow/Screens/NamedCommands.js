@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { StatusBar } from "expo-status-bar";
 import { Text, View, Pressable, Modal, Image, Dimensions, Alert } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { NamedStyles } from "./Styles/NamedCommandStyes";
-import Menu from "./Menu";
+import { NamedStyles } from "../Styles/NamedCommandStyes";
+import Menu from "../Components/Menu";
 
 export default class Named extends Component {
     constructor(props) {

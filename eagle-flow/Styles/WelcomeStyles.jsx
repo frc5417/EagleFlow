@@ -84,4 +84,7 @@ export const WelcomeStyles = StyleSheet.create({
         alignSelf: 'center',
         marginVertical: screenHeight / 75,
     },
+    fileInput: {
+        // display: 'none',
+    },
 });

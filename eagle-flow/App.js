@@ -5,10 +5,9 @@ import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Welcome from './Welcome';
-import Home from './HomePage';
-import Named from './NamedCommands';
-import Menu from './Menu';
+import Welcome from './Screens/Welcome';
+import Home from './Screens/HomePage';
+import Named from './Screens/NamedCommands';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +22,6 @@ export default function App() {
         <Stack.Screen name = "Welcome" component = {Welcome} />
         <Stack.Screen name = "Home" component = {Home} />
         <Stack.Screen name = "Named" component = {Named} />
-        <Stack.Screen name = "Menu" component = {Menu} />
       </Stack.Navigator>
     </NavigationContainer>
   );
