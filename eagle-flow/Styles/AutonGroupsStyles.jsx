@@ -21,10 +21,12 @@ export const AutonStyles = StyleSheet.create({
         flexWrap: "wrap",
         width: screenWidth * 0.75
     },
+
     blueAutos: {
+        marginTop: screenHeight / 30,
         marginLeft: screenWidth / 20,
         width: screenWidth * 0.325,
-        height: screenHeight / 1.25,
+        height: screenHeight / 1.275,
         backgroundColor: '#3B69E0',
         alignContent: 'center',
         alignSelf: 'center',
@@ -38,15 +40,18 @@ export const AutonStyles = StyleSheet.create({
         color: 'black',
         textDecorationLine: 'underline',
     },
+
     redAutos: {
+        marginTop: screenHeight / 30,
         marginLeft: screenWidth / 20,
         width: screenWidth * 0.325,
-        height: screenHeight / 1.25,
+        height: screenHeight / 1.275,
         backgroundColor: 'rgba(204, 53, 65, 0.8)',
         alignContent: 'center',
         alignSelf: 'center',
         borderRadius: 35,
     },
+    
     newAutos: {
         marginLeft: screenWidth / 20,
         width: screenWidth * 0.325,
@@ -103,6 +108,7 @@ export const AutonStyles = StyleSheet.create({
         fontFamily: 'K2D-SemiBold',
         fontSize: 10 * fontScaleFactor,
         color: 'black',
+        alignSelf: 'center',
     },
     blueAutosSmallest: {
         display: "flex",
@@ -141,7 +147,8 @@ export const AutonStyles = StyleSheet.create({
         paddingHorizontal: 5
     },
     image: {
-        width: screenWidth * 0.02,
-        height: screenWidth * 0.02,
+        width: screenWidth * 0.015,
+        height: screenWidth * 0.015,
+        alignSelf: 'center',
     }
 });

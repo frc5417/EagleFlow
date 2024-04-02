@@ -13,7 +13,7 @@ export default class Named extends Component {
     render() {
         return (
             <LinearGradient
-                colors = {["#00236f", "#4e1264", "#6f004f", "#820036", "#88001a"]}
+                colors={["#00174a", "#2c0c3f", "#3e0031", "#470020", "#48000e"]}
                 start = {{x: 0, y: 0}}
                 end = {{x: 0.5, y: 0.5}}
                 style = {NamedStyles.container}
@@ -23,7 +23,7 @@ export default class Named extends Component {
                     <Text style = {NamedStyles.namedCommandsText}> Named Commands </Text>
 
                     <View style = {NamedStyles.intakeNoteContainer}>
-                        <Text style = {NamedStyles.intakeNoteText}>Intake Note</Text>
+                        <Text style = {NamedStyles.intakeNoteText}> Intake Note </Text>
                     </View>
 
                     <View style = {NamedStyles.shootAngleContainer}>

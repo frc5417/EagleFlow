@@ -30,6 +30,7 @@ export default function Welcome({navigation}) {
 
     return (
         <LinearGradient
+            // colors={["#00174a", "#2c0c3f", "#3e0031", "#470020", "#48000e"]}
             colors={["#00236f", "#4e1264", "#6f004f", "#820036", "#88001a"]}
             start={{ x: 0, y: 0 }}
             end={{ x: 0.5, y: 0.5 }}
