@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Text, View, Button, Pressable, Image } from "react-native";
 import { AutonStyles } from "../Styles/AutonGroupsStyles";
 import FolderIcon from "../assets/Images/FolderIcon.png";
+import threeDots from "../assets/Images/3-dots.png";
 
 export default class AutonGroups extends Component {
 
@@ -36,6 +37,7 @@ export default class AutonGroups extends Component {
                                 return (
                                     <View style={[folderStyle]} key={id}>
                                         <Text style={AutonStyles.mainText}> {name} </Text>
+
                                     </View>
                                 );
                             })}
@@ -65,6 +67,7 @@ export default class AutonGroups extends Component {
                                     return (
                                         <View style={[folderStyle]} key={id}>
                                             <Text style={AutonStyles.mainText}> {name} </Text>
+                                            <Image source={threeDots} style={AutonStyles.threeDotsImageSmallest} />
                                         </View>
                                     );
                                 })}
@@ -95,6 +98,7 @@ export default class AutonGroups extends Component {
                                             <View style={[folderStyle]} key={id}>
                                                 <Image source={FolderIcon} style={AutonStyles.image} />
                                                 <Text style={AutonStyles.mainTextSmall}> {name} </Text>
+                                                <Image source={threeDots} style={AutonStyles.threeDotsImageSmallest} />
                                             </View>
                                         );
                                     })}
