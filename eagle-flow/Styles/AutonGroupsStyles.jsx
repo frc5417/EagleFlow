@@ -120,7 +120,8 @@ export const AutonStyles = StyleSheet.create({
         backgroundColor: 'rgba(59, 105, 224, 0.8)',
         alignContent: 'center',
         borderRadius: 15,
-        paddingHorizontal: 5
+        paddingHorizontal: 5,
+        justifyContent: "space-between"
     },
     redAutosSmallest: {
         display: "flex",
@@ -132,7 +133,8 @@ export const AutonStyles = StyleSheet.create({
         backgroundColor: 'rgba(204, 53, 65, 0.8)',
         alignContent: 'center',
         borderRadius: 15,
-        paddingHorizontal: 5
+        paddingHorizontal: 5,
+        justifyContent: "space-between"
     },
     newAutosSmallest: {
         display: "flex",
@@ -144,11 +146,19 @@ export const AutonStyles = StyleSheet.create({
         backgroundColor: 'rgba(245, 221, 20, 0.8)',
         alignContent: 'center',
         borderRadius: 15,
-        paddingHorizontal: 5
+        paddingHorizontal: 5,
+        justifyContent: "space-between"
     },
     image: {
         width: screenWidth * 0.015,
         height: screenWidth * 0.015,
         alignSelf: 'center',
-    }
+    },
+    threeDotsImageSmallest: {
+        width: screenWidth * 0.015,
+        height: screenWidth * 0.015,
+        alignSelf: 'center',
+        
+        // alignItems: 'center',
+    },
 });
