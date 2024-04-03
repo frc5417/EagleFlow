@@ -164,7 +164,8 @@ export const AutonStyles = StyleSheet.create({
         width: screenWidth * 0.025,
         height: screenWidth * 0.025,
         alignSelf: "flex-end",
-        marginBottom: 10
+        marginBottom: screenHeight/200,
+        marginRight: screenWidth/200
     },
     textHolder: {
         display: "flex",

@@ -6,7 +6,7 @@ import { commonStyles, blueAutonStyles, redAutonStyles } from "../Styles/HomePag
 import Menu from "../Components/Menu";
 import AutonGroups from "../Components/AutonGroups";
 
-export default function Home(navigation) {
+export default function Home({navigation}) {
     const [numOfFolders, setNumoffolders] = useState(2);
 
     const [folders, setFolders] = useState([
@@ -38,7 +38,7 @@ export default function Home(navigation) {
                 style = {commonStyles.container}
             >
             
-            <Menu/>
+            <Menu navigation={navigation} />
 
             <AutonGroups numofFolders={numOfFolders} folders={folders} updateNumOfFolders={updateNumOfFolders} />
                     

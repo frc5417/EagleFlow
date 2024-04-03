@@ -42,7 +42,7 @@ export const MenuStyles = StyleSheet.create({
         marginVertical: screenHeight / 75,
     },
     
-    namedCommandsText: {
+    menuText: {
         fontFamily: 'K2D-SemiBold',
         marginVertical: screenHeight / textVerticalMargin,
         fontSize: 12.5 * fontScaleFactor,
@@ -50,53 +50,6 @@ export const MenuStyles = StyleSheet.create({
         color: 'white',
     },
 
-    pathsText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / textVerticalMargin,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    telemetryText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / textVerticalMargin,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    fieldText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / textVerticalMargin,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    settingsText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / textVerticalMargin,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    documentationText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / textVerticalMargin,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
-
-    homeText: {
-        fontFamily: 'K2D-SemiBold',
-        marginVertical: screenHeight / textVerticalMargin,
-        fontSize: 12.5 * fontScaleFactor,
-        alignSelf: 'center',
-        color: 'white',
-    },
 
     newProjectContainer: {
         marginTop: screenHeight / 50,
