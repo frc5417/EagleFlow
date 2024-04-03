@@ -39,6 +39,7 @@ export const AutonStyles = StyleSheet.create({
         alignSelf: 'center',
         color: 'black',
         textDecorationLine: 'underline',
+        textAlign: "center"
     },
 
     redAutos: {
@@ -158,7 +159,20 @@ export const AutonStyles = StyleSheet.create({
         width: screenWidth * 0.015,
         height: screenWidth * 0.015,
         alignSelf: 'center',
-        
-        // alignItems: 'center',
     },
+    threeDotsImage: {
+        width: screenWidth * 0.025,
+        height: screenWidth * 0.025,
+        alignSelf: "flex-end",
+        marginBottom: 10
+    },
+    textHolder: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    textContainer: {
+        flex: 1,
+    },
+
 });

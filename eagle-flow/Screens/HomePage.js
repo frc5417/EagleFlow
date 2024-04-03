@@ -38,7 +38,8 @@ export default function Home(navigation) {
                 style = {commonStyles.container}
             >
             
-            <Menu />
+            <Menu/>
+
             <AutonGroups numofFolders={numOfFolders} folders={folders} updateNumOfFolders={updateNumOfFolders} />
                     
             </LinearGradient>

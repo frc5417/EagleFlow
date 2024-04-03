@@ -36,9 +36,15 @@ export default class AutonGroups extends Component {
 
                                 return (
                                     <View style={[folderStyle]} key={id}>
-                                        <Text style={AutonStyles.mainText}> {name} </Text>
+                                           <View style={AutonStyles.textHolder}>
+                                                <View style={AutonStyles.textContainer}>
+                                                    <Text style={AutonStyles.mainText}> {name} </Text>
+                                                </View>
+                                                <Image source={threeDots} style={AutonStyles.threeDotsImage} />
+                                            </View>
 
-                                    </View>
+
+                                        </View>
                                 );
                             })}
 
@@ -66,8 +72,14 @@ export default class AutonGroups extends Component {
     
                                     return (
                                         <View style={[folderStyle]} key={id}>
-                                            <Text style={AutonStyles.mainText}> {name} </Text>
-                                            <Image source={threeDots} style={AutonStyles.threeDotsImageSmallest} />
+                                           <View style={AutonStyles.textHolder}>
+                                                <View style={AutonStyles.textContainer}>
+                                                    <Text style={AutonStyles.mainText}> {name} </Text>
+                                                </View>
+                                                <Image source={threeDots} style={AutonStyles.threeDotsImage} />
+                                            </View>
+
+
                                         </View>
                                     );
                                 })}
