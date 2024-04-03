@@ -84,7 +84,41 @@ export const WelcomeStyles = StyleSheet.create({
         alignSelf: 'center',
         marginVertical: screenHeight / 75,
     },
-    fileInput: {
-        // display: 'none',
+    popup: {
+        display: "flex",
+        alignSelf: 'center',
+        alignContent: 'center',
+        padding: screenWidth/50,
+        marginHorizontal: screenWidth * 0.25,
+        marginVertical: screenHeight * 0.3,
     },
+    popupText: {
+        fontFamily: 'K2D-SemiBold',
+        fontSize: 15 * fontScaleFactor,
+        color: 'white',
+        textAlign: "center"
+    },
+    popupButtonContainer: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        margin: screenHeight/50
+    },
+    popupButton: {
+        borderRadius: 15,
+        padding: screenHeight/150,
+        textAlignVertical: "center"
+    },
+    popupButtonText: {
+        fontFamily: 'K2D-SemiBold',
+        fontSize: 10 * fontScaleFactor,
+        textAlign: "center",
+        color: 'white',
+    },
+    modalView: {
+        backgroundColor: 'rgba(210, 183, 183, 0.8)',
+        margin: screenHeight/10,
+        padding: screenWidth/75,
+        borderRadius: 20,
+      },
 });
