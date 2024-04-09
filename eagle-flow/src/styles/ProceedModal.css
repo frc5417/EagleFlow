@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'K2D-Semibold';
+    src: url(../assets/fonts/K2D/K2D-SemiBold.ttf) format('truetype');
+}
+
+:root {
+    --font-family: 'K2D-Semibold', sans-serif;
+    --screen-height: 100vh;
+    --screen-width: 100vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.modalBackground {
+    display: flex;
+    background-color: rgba(210, 183, 183, 0.8);
+    padding: 2vmin;
+    height: auto;
+    width: 25vw;
+    align-self: center;
+    margin: 10vh;
+    border-radius: 3vmin;
+}
+
+.modalContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+
+.modalBigText {
+    color: #ffffff;
+    align-self: center;
+    margin-bottom: 5vmin;
+    margin-top: 1vmin;
+    margin-left: 1vmin;
+    margin-right: 1vmin;
+    font-size: 2vmin;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modalButton {
+    height: 7vh;
+    border-radius: 1vh;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin-top: 5vmin;
+    margin-bottom: 1vmin;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    line-height: 0px;
+    font-size: 2vmin;
+    color: #ffffff;
+    font-family: var(--font-family);
+}
+
+#cancelBtn {
+    background-color: #CC3541;
+}
+
+#proceedBtn {
+    background-color: #3B69E0;
+}
