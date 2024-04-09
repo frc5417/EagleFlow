@@ -14,15 +14,15 @@ export function Welcome() {
 
   return( 
     <>
-      <div className='container'>
-        <h1> Welcome </h1>
+      <div className='welcomeContainer'>
+        <h1 className='header'> Eagle Flow </h1>
 
         <div className='opacityBox'>
-          <img src={uploadIcon} alt="uploadIcon" />
+          <img src={uploadIcon} alt="uploadIcon" className='uploadImage' />
 
-          <p> Drag & Drop to Upload Folder </p>
-          <p> OR </p>
-          <button type="button" onClick={handleClick}>
+          <p className='uploadText'> Drag & Drop to Upload Folder </p>
+          <p className='uploadText'> OR </p>
+          <button type="button" onClick={handleClick} className='uploadButton'>
             Browse Files
           </button>
         </div>

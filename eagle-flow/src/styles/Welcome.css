@@ -14,7 +14,7 @@
     padding: 0;
 }
 
-.container {
+.welcomeContainer {
     height: var(--screen-height);
     width: var(--screen-width);
     background: linear-gradient(to bottom right, #00236f, #4e1264, #6f004f, #820036, #88001a); 
@@ -24,7 +24,7 @@
     flex-direction: column;
 }
   
-h1 {
+.header {
     color: #ffffff;
     font-size: 10vmax;
     align-self: center;
@@ -44,18 +44,18 @@ h1 {
     margin-bottom: 0vmax;
 }
 
-img {
+.uploadImage {
     height: 15vh;
     padding: 1vmin;
 }
 
-p {
+.uploadText {
     color: #ffffff;
     font-size: 3vmax;
     padding: 1vmin;
 }
 
-button {
+.uploadButton {
     background: linear-gradient(to right bottom, #356bd4, #305fb8, #2c539d, #284782, #253b68), rgba(255, 255, 255, 0.75) ;
     width: 20vw;
     height: 7vh;

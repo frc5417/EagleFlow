@@ -14,7 +14,16 @@
     padding: 0;
 }
 
-h1 {
+.homeContainer {
+    background: linear-gradient(to bottom right, #00174a, #2c0c3f, #3e0031, #470020, #48000e);
+    height: var(--screen-height);
+    width: var(--screen-width);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.home {
     font-family: var(--font-family);
     color: #000000;
     font-size: 10vh;
