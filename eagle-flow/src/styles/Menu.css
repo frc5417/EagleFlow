@@ -43,4 +43,13 @@
     width: 15vw;
     border-radius: 3vh;
     margin-top: 4vh;
+    font-family: var(--font-family);
+    color: #ffffff;
+    font-size: 3vh;
+}
+
+.wifiIcon {
+    height: 20vh;
+    width: 20vh;
+    align-self: center;
 }

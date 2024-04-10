@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'K2D-Semibold';
+    src: url(../assets/fonts/K2D/K2D-SemiBold.ttf) format('truetype');
+}
+
+:root {
+    --font-family: 'K2D-Semibold', sans-serif;
+    --screen-height: 100vh;
+    --screen-width: 100vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.autonContainer{
+    display: flex;
+    background-color: aliceblue;
+    margin-top: 10vh;
+    height: 80vh;
+    width: 75vw;
+}

@@ -7,7 +7,10 @@ function createWindow () {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    // Remember to uncomment when publishing app
+    // Removes the Dev View stuff
+    // autoHideMenuBar: true,
   })
 
   win.loadURL('http://localhost:3000')

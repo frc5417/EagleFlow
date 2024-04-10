@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import { Menu } from '../components/Menu'
+import { AutonGroups } from '../components/AutonGroups'
 import '../styles/Home.css'
 
 export function Home() {
@@ -12,7 +13,7 @@ export function Home() {
         <>
             <div className='homeContainer'>
                 <Menu navigate={navigate}/>
-                <h1 className='home'> Home </h1>
+                <AutonGroups />
             </div>
         </>
     )

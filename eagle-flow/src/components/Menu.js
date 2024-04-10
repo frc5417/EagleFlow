@@ -1,19 +1,29 @@
 import React, {Component} from 'react'
 
 import '../styles/Menu.css'
+import wifiConnectedIcon from '../assets/images/wifiConnected.png'
+import wifiDisonnectedIcon from '../assets/images/wifiDisconnected.png'
 
 export class Menu extends Component {
     render() {
+        const wifi = false;
+
+        var wifiIcon = wifiDisonnectedIcon;
 
         const newProject = () => {
             this.props.navigate("/");
         }
 
+        if(wifi === true){
+            wifiIcon = wifiConnectedIcon;
+        } else {
+            wifiIcon = wifiDisonnectedIcon;
+        }
+
         return(
             <div className='menuContainer'>
-                <div style={{backgroundColor:"red", width: "15vw", height: "15vh", alignSelf: "center"}}>
-                    <p> Placeholder for wifi icon </p>
-                </div>
+
+                <img src={wifiIcon} className='wifiIcon' alt='' />
 
                 <div className='menuTextContainer'>
                     <button className='menuTextButton'>
