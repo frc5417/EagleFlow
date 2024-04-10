@@ -60,14 +60,10 @@
     width: 20vw;
     height: 7vh;
     border-radius: 3vh;
-    border: none;
-    outline: none;
-    box-shadow: none;
     font-family: var(--font-family);
     color: #ffffff;
     font-size: 3vmin;
     align-items: center;
     margin: 2vmin;
     padding: 1vh;
-    line-height: 0px;
 }

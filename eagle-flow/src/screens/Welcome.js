@@ -29,7 +29,7 @@ export function Welcome() {
         }
         
         if(approved){
-            navigate("Home")
+            navigate("/home")
         } else {
           setOpenModal(true);
         }

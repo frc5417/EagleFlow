@@ -14,3 +14,33 @@
     padding: 0;
 }
 
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 15vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-color: rgba(210, 183, 183, 0.4);
+    border-radius: 5vmin;
+    padding: 1vmax;
+}
+
+.menuTextButton {
+    width: 100%;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    font-family: var(--font-family);
+    font-size: 3vmin;
+    color: #ffffff;
+}
+
+.menuNewProject {
+    background: linear-gradient(to bottom right, #b12941, #a62537, #9a222d, #8f1e24, #831b1b);
+    height: 7vh;
+    width: 15vw;
+    border-radius: 3vh;
+    margin-top: 4vh;
+}

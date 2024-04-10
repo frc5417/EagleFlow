@@ -51,14 +51,10 @@
 .modalButton {
     height: 7vh;
     border-radius: 1vh;
-    border: none;
-    outline: none;
-    box-shadow: none;
     margin-top: 5vmin;
     margin-bottom: 1vmin;
     padding-left: 2vw;
     padding-right: 2vw;
-    line-height: 0px;
     font-size: 2vmin;
     color: #ffffff;
     font-family: var(--font-family);
