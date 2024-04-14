@@ -7,8 +7,11 @@ import uploadIcon from '../assets/images/UploadCloudIcon.png'
 
 export function Welcome() {
 
+  const ipcRenderer = window.electron.ipcRenderer;
+
   const [openModal, setOpenModal] = useState(false);
   const [navigation, setNavigation] = useState(false);
+  const [jsonFilePath, setJSONFilePath] = useState("");
   
   const navigate = useNavigate();
 
@@ -18,27 +21,35 @@ export function Welcome() {
     fileInput.webkitdirectory = true;
     fileInput.multiple = false;
     fileInput.addEventListener("change", async (event) => {
-         
-        var approved = false;
-
-        for(var i=0; i<event.target.files.length; i++){
-            if(event.target.files[i].name === "wpilib_preferences.json"){
-                approved = true;
-                break;
-            }
+      var FRCFolder = false;
+      var firstTime = true;
+      for (var i = 0; i < event.target.files.length; i++) {
+        if (event.target.files[i].name === "wpilib_preferences.json") {
+          FRCFolder = true;
+          break;
         }
-        
-        if(approved){
-            navigate("/home")
+      }
+      if (FRCFolder && firstTime) {
+        ipcRenderer.send('upload-folder', { path: event.target.files[0].path });
+      } else {
+        if(FRCFolder) {
+          ipcRenderer.send('upload-old-folder', {path: event.target.files[0].path});
         } else {
           setOpenModal(true);
         }
+      }
     });
+  
+    ipcRenderer.on('json-file-path', (event, jsonFilePath) => {
+      setJSONFilePath(jsonFilePath)
+      setNavigation(true);
+    });
+  
     fileInput.click();
-};
-
+  };
+  
   if(navigation === true){
-    navigate("Home");
+    navigate("/home")
   }
 
   if(openModal === false){
