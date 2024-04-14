@@ -35,13 +35,12 @@
     width: 60vw;
     height: 50vh;
     align-self: center;
-    align-items: center;
-    align-content: center;
     border-radius: 5vh;
+    
     display: flex;
     flex-direction: column;
-    margin: 10vmax;
-    margin-bottom: 0vmax;
+    align-items: center;
+    align-content: center;
 }
 
 .uploadImage {
@@ -53,17 +52,34 @@
     color: #ffffff;
     font-size: 3vmax;
     padding: 1vmin;
+    margin: 5vmin;;
 }
 
 .uploadButton {
-    background: linear-gradient(to right bottom, #356bd4, #305fb8, #2c539d, #284782, #253b68), rgba(255, 255, 255, 0.75) ;
+    background: linear-gradient(to right bottom, #356bd4, #305fb8, #2c539d, #284782, #253b68);
     width: 20vw;
     height: 7vh;
     border-radius: 3vh;
     font-family: var(--font-family);
     color: #ffffff;
     font-size: 3vmin;
+    margin: 5vmin;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 2vmin;
-    padding: 1vh;
+    align-content: center;
+    justify-content: center;
+    padding: 0.5vmin;
+}
+
+.overallButton {
+    width: 60vw;
+    height: 50vh;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 1;
+    align-self: center;
+    font-family: var(--font-family);
+    margin: 10vmax;
+    margin-bottom: 0vmax;
 }
