@@ -16,8 +16,12 @@
 
 .autonContainer{
     display: flex;
-    background-color: aliceblue;
+    background-color: rgba(0,0,0,0);
     margin-top: 10vh;
     height: 80vh;
     width: 75vw;
+}
+
+.testText {
+    color: #FFFFFF;
 }

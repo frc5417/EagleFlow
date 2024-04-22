@@ -11,7 +11,6 @@ export function Welcome() {
 
   const [openModal, setOpenModal] = useState(false);
   const [navigation, setNavigation] = useState(false);
-  const [jsonFilePath, setJSONFilePath] = useState("");
   
   const navigate = useNavigate();
 
@@ -29,22 +28,28 @@ export function Welcome() {
           break;
         }
       }
+
+      for (var j = 0; j < event.target.files.length; j++) {
+        if (event.target.files[j].name === "eagle-flow.json") {
+          firstTime = false;
+          break;
+        }
+      }
+
       if (FRCFolder && firstTime) {
         ipcRenderer.send('upload-folder', { path: event.target.files[0].path });
+        setNavigation(true)
       } else {
         if(FRCFolder) {
           ipcRenderer.send('upload-old-folder', {path: event.target.files[0].path});
+          setNavigation(true)
         } else {
           setOpenModal(true);
         }
       }
     });
   
-    ipcRenderer.on('json-file-path', (event, jsonFilePath) => {
-      setJSONFilePath(jsonFilePath)
-      setNavigation(true);
-    });
-  
+
     fileInput.click();
   };
   
@@ -57,7 +62,6 @@ export function Welcome() {
       <>
         <div className='welcomeContainer'>
           <h1 className='header'> Eagle Flow </h1>
-
           <button type='button' className='overallButton' onClick={handleClick}>
             <div className='opacityBox'>
               <img src={uploadIcon} alt="uploadIcon" className='uploadImage' />

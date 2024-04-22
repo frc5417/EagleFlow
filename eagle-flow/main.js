@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron/main');
 const path = require('path');
 const fs = require('fs');
+const { json } = require('react-router-dom');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -30,14 +31,26 @@ app.on('window-all-closed', () => {
   }
 });
 
+var jsonFilePath = null;
+
 ipcMain.on('upload-folder', (event, data) => {
-  const newFolderPath = path.join(path.dirname(data.path), 'EagleFlow');
-  const jsonFilePath = path.join(newFolderPath, 'eagle-flow.json');
+  const newFolderPath = path.join(path.dirname(data.path), 'eagle-flow');
+  jsonFilePath = path.join(newFolderPath, 'eagle-flow.json');
   fs.mkdirSync(newFolderPath, { recursive: true });
 
   const jsonData = [
-    { id: 0, name: "Blue" },
-    { id: 1, name: "Red" }
+    {
+      folders: {
+        AutonFolders: [
+          { name: "Blue" },
+          { name: "Red" },
+        ],
+        PathFolders: [
+          { name: "Blue" },
+          { name: "Red" },
+        ],
+      }
+    }
   ];
 
   fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
@@ -46,20 +59,39 @@ ipcMain.on('upload-folder', (event, data) => {
 });
 
 ipcMain.on('upload-old-folder', (event, data) => {
-  const newFolderPath = path.join(path.dirname(data.path), 'EagleFlow');
-  const jsonFilePath = path.join(newFolderPath, 'eagle-flow.json');
-
+  const newFolderPath = path.join(path.dirname(data.path), 'eagle-flow');
+  jsonFilePath = path.join(newFolderPath, 'eagle-flow.json');
+  console.log(jsonFilePath);
   event.reply('json-file-path', jsonFilePath);
 });
 
 ipcMain.on('read-json-file', (event, filePath) => {
-  try {
     const jsonData = fs.readFileSync(filePath, 'utf-8');
 
     const parsedData = JSON.parse(jsonData);
 
     event.reply('json-file-data', parsedData);
-  } catch (error) {
-    event.reply('json-file-error', { message: 'Error reading JSON file', error });
-  }
+});
+
+ipcMain.on('new-folder', (event, newData, folderToUpdate) => {
+  console.log("jsonFilePath:", jsonFilePath);
+
+  const data = fs.readFileSync(jsonFilePath);
+  const jsonData = JSON.parse(data);
+
+  console.log("Before Adding data", JSON.stringify(jsonData, null, 2));
+
+  jsonData[0].folders["AutonFolders"].push(newData);
+  console.log(folderToUpdate);
+  console.log(newData);
+
+  const jsonString = JSON.stringify(jsonData, null, 2);
+  fs.writeFileSync(jsonFilePath, jsonString, 'utf-8');
+
+  console.log('Data added to file');
+
+  const updatedData = fs.readFileSync(jsonFilePath);
+  const updatedJsonData = JSON.parse(updatedData);
+
+  console.log(JSON.stringify(updatedJsonData, null, 2));
 });
