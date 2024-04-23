@@ -18,8 +18,6 @@ export class AutonGroups extends Component {
             this.setState({ filePath: jsonFilePath });
             ipcRenderer.send('read-json-file', jsonFilePath);
         });
-    
-        
     }
     
     componentWillUnmount() {
@@ -47,6 +45,7 @@ export class AutonGroups extends Component {
     addNewFolder = (folderName, folderToUpdate) => {
         const ipcRenderer = window.electron.ipcRenderer;
         console.log(folderName)
+
         const newData = {
             name: folderName
         };
@@ -54,7 +53,7 @@ export class AutonGroups extends Component {
         console.log("New folder data:", newData);
         console.log("File path:", this.state.filePath);
     
-        ipcRenderer.send('new-folder', newData, folderToUpdate);
+        ipcRenderer.send('new-folder', [newData, folderToUpdate]);
     };
     
     
@@ -63,8 +62,8 @@ export class AutonGroups extends Component {
         return (
             <div className='autonContainer'>
                 <p className='testText'>File Path: {this.state.filePath}</p>
-                <p className='testText'>{JSON.stringify(this.state.data)}</p>
-                <button onClick={() => this.addNewFolder("Test", "AutonFolders")}>Add New Folder</button>
+                <p className='testText'>Data: {JSON.stringify(this.state.data)}</p>
+                <button onClick={() => this.addNewFolder("Test", "AutonFolders")}>Test</button>
             </div>
         );
     }

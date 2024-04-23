@@ -73,7 +73,7 @@ ipcMain.on('read-json-file', (event, filePath) => {
     event.reply('json-file-data', parsedData);
 });
 
-ipcMain.on('new-folder', (event, newData, folderToUpdate) => {
+ipcMain.on('new-folder', (event, [newData, folderToUpdate]) => {
   console.log("jsonFilePath:", jsonFilePath);
 
   const data = fs.readFileSync(jsonFilePath);
@@ -81,7 +81,7 @@ ipcMain.on('new-folder', (event, newData, folderToUpdate) => {
 
   console.log("Before Adding data", JSON.stringify(jsonData, null, 2));
 
-  jsonData[0].folders["AutonFolders"].push(newData);
+  jsonData[0].folders[folderToUpdate].push(newData);
   console.log(folderToUpdate);
   console.log(newData);
 

@@ -80,6 +80,6 @@
     z-index: 1;
     align-self: center;
     font-family: var(--font-family);
-    margin: 10vmax;
-    margin-bottom: 0vmax;
+    margin: 14vmin;
+    margin-bottom: 1vmax;
 }
