@@ -20,8 +20,86 @@
     margin-top: 10vh;
     height: 80vh;
     width: 75vw;
+    flex-direction: column;
 }
 
 .testText {
     color: #FFFFFF;
+}
+
+.newAutonFolderButton {
+    background-color: rgba(217, 217, 217, 0.2);
+    height: 5vh;
+    width: 10vw;
+    margin-bottom: 3vh;
+    border-radius: 2vh;
+    align-self: flex-end;
+    margin-right: 2vw;
+    font-family: var(--font-family);
+    font-size: 2vh;
+    color: #FFFFFF;
+}
+
+.biggestContainer {
+    margin-right: 2vw;
+    height: 70vh;
+    width: 50vw;
+    border-radius: 5vmin;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.bigText {
+    font-family: var(--font-family);
+    font-size: 5vmin;
+}
+
+.mediumContainer {
+    margin-right: 2vw;
+    margin-bottom: 5vh;
+    height: 30vh;
+    width: 35vw;
+    border-radius: 5vmin;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.overallMedium {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.smallText {
+    font-family: var(--font-family);
+    font-size: 3vmin;
+}
+
+.smallContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2vmin;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 1vmin;
+    padding: 0.5vmin;
+}
+
+.overallSmall {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.folderIcon {
+    width: 2vw;
+    height: 4vh;
+}
+
+.menuIcon {
+    height: 4vh;
 }

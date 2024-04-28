@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/AutonGroups.css';
+import folderIcon from '../assets/images/folderIcon.png'
+import threeDots from '../assets/images/threeDots.png'
 
 export class AutonGroups extends Component {
     constructor(props) {
@@ -7,6 +9,8 @@ export class AutonGroups extends Component {
         this.state = {
             filePath: null,
             data: null,
+            dataLength: null,
+            autonData: null,
         };
     }
 
@@ -27,7 +31,7 @@ export class AutonGroups extends Component {
         ipcRenderer.removeAllListeners('new-json-file-data');
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps, prevState) {
         const ipcRenderer = window.electron.ipcRenderer;
 
         ipcRenderer.send('read-json-file', this.state.filePath);
@@ -35,6 +39,14 @@ export class AutonGroups extends Component {
         ipcRenderer.on('json-file-data', (event, data) => {
         this.setState({ data: data });
         });
+
+        if (this.state.data !== prevState.data) {
+            const dataLength = this.state.data ? this.state.data[0]?.folders?.AutonFolders?.length : 0;
+            const autonData = this.state.data ? this.state.data[0]?.folders?.AutonFolders : null;
+            if (dataLength !== prevState.dataLength) {
+                this.setState({dataLength: dataLength, autonData:  autonData});
+            }
+        }
     }
     
     handleJsonData = (event, jsonData) => {
@@ -42,16 +54,13 @@ export class AutonGroups extends Component {
         this.setState({ data: jsonData });
     };
     
-    addNewFolder = (folderName, folderToUpdate) => {
+    addNewFolder = (folderName, folderColor, folderToUpdate) => {
         const ipcRenderer = window.electron.ipcRenderer;
-        console.log(folderName)
 
         const newData = {
-            name: folderName
+            name: folderName,
+            color: folderColor
         };
-    
-        console.log("New folder data:", newData);
-        console.log("File path:", this.state.filePath);
     
         ipcRenderer.send('new-folder', [newData, folderToUpdate]);
     };
@@ -59,12 +68,67 @@ export class AutonGroups extends Component {
     
 
     render() {
-        return (
-            <div className='autonContainer'>
-                <p className='testText'>File Path: {this.state.filePath}</p>
-                <p className='testText'>Data: {JSON.stringify(this.state.data)}</p>
-                <button onClick={() => this.addNewFolder("Test", "AutonFolders")}>Test</button>
-            </div>
-        );
+        if(this.state.dataLength === 2){
+            return (
+                <div className='autonContainer'>
+                    <button className='newAutonFolderButton' onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}> New Group </button>
+
+                    <div style={{display: 'flex', flexDirection: "row"}}>
+                        {this.state.autonData ? (
+                            this.state.autonData.map(folder => (
+                                <div className='biggestContainer' style={{backgroundColor: folder.color}}>
+                                    <div>
+                                        <p key={folder.name} className='bigText'> {folder.name} </p>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <p>No data available</p>
+                        )}
+                    </div>
+                </div>
+            );
+        } else {
+        if(this.state.dataLength <= 4){
+            return (
+                <div className='autonContainer'>
+                    <button className='newAutonFolderButton' onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}> New Group </button>
+
+                    <div className='overallMedium'>
+                    {this.state.autonData ? (
+                        this.state.autonData.map(folder => (
+                            <div className='mediumContainer' style={{backgroundColor: folder.color}}>
+                                <p key={folder.name} className='bigText'> {folder.name} </p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No data available</p>
+                    )}
+                    </div>
+                    <button onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}>{this.state.dataLength}</button>
+                </div>
+            );            
+        } else {
+            return (
+                <div className='autonContainer'>
+                    <button className='newAutonFolderButton' onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}> New Group </button>
+                    <div className='overallSmall'>
+                    {this.state.autonData ? (
+                        this.state.autonData.map(folder => (
+                            <div className='smallContainer' style={{backgroundColor: folder.color}}>
+                                <img src={folderIcon} alt='Folder Icon' className='folderIcon' />
+                                <p key={folder.name} className='smallText'> {folder.name} </p>
+                                <img src={threeDots} alt='Folder Icon' className='menuIcon' />
+                            </div>
+                        ))
+                    ) : (
+                        <p>No data available</p>
+                    )}
+                    </div>
+                    <button onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}>{this.state.dataLength}</button>
+                </div>
+            );
+        }
+        }
     }
 }

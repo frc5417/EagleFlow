@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron/main');
+const { app, BrowserWindow, ipcMain, globalShortcut } = require('electron/main');
 const path = require('path');
 const fs = require('fs');
 const { json } = require('react-router-dom');
@@ -23,6 +23,8 @@ app.whenReady().then(() => {
       createWindow();
     }
   });
+
+  globalShortcut.register('CommandOrControl+R', () => {})
 });
 
 app.on('window-all-closed', () => {
@@ -30,6 +32,12 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
+
+
+
+app.on('will-quit', () => {
+  globalShortcut.unregisterAll()
+})
 
 var jsonFilePath = null;
 
@@ -42,8 +50,14 @@ ipcMain.on('upload-folder', (event, data) => {
     {
       folders: {
         AutonFolders: [
-          { name: "Blue" },
-          { name: "Red" },
+          { 
+            name: "Blue",
+            color: "#3B69E0"
+          },
+          { 
+            name: "Red",
+            color: "#CC3541"
+          },
         ],
         PathFolders: [
           { name: "Blue" },
