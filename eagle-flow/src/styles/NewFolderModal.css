@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'K2D-Semibold';
+    src: url(../assets/fonts/K2D/K2D-SemiBold.ttf) format('truetype');
+}
+
+:root {
+    --font-family: 'K2D-Semibold', sans-serif;
+    --screen-height: 100vh;
+    --screen-width: 100vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.modalBackground {
+    position: fixed;
+    top: 0;
+    left: 30vw;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+
+.modalBigText {
+    color: #ffffff;
+    align-self: center;
+    margin-bottom: 2vmin;
+    margin-top: 1vmin;
+    margin-left: 1vmin;
+    margin-right: 1vmin;
+    font-size: 2vmin;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modalButton {
+    height: 7vh;
+    border-radius: 1vh;
+    margin-top: 5vmin;
+    margin-bottom: 1vmin;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    font-size: 2vmin;
+    color: #ffffff;
+    font-family: var(--font-family);
+}
+
+.nameAndColor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chooseColor {
+    margin-left: 1vw;
+    font-family: var(--font-family);
+    color: #ffffff;
+    align-self: center;
+    font-size: 2vh;
+}
+
+.color {
+    width: 36px;
+    height: 14px;
+    border-radius: 2px;
+}
+
+.swatch {
+    padding: 1vh;
+    background: #fff;
+    border-radius: 1px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popover {
+position: absolute;
+z-index: 2;
+}
+
+.cover {
+    position: fixed;
+}
+
+.textInput {
+    padding: 1vh;
+    height: 3vh;
+    width: 20vh;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 2vh;
+    margin: 1vh;
+    margin-bottom: 3vh;
+    font-family: var(--font-family);
+}
+
+#cancelBtn {
+    background-color: #CC3541;
+}
+
+#proceedBtn {
+    background-color: #3B69E0;
+}

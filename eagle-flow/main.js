@@ -96,8 +96,6 @@ ipcMain.on('new-folder', (event, [newData, folderToUpdate]) => {
   console.log("Before Adding data", JSON.stringify(jsonData, null, 2));
 
   jsonData[0].folders[folderToUpdate].push(newData);
-  console.log(folderToUpdate);
-  console.log(newData);
 
   const jsonString = JSON.stringify(jsonData, null, 2);
   fs.writeFileSync(jsonFilePath, jsonString, 'utf-8');

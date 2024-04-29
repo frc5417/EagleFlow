@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/AutonGroups.css';
+import { NewFolderModal } from './NewFolderModal';
+
 import folderIcon from '../assets/images/folderIcon.png'
 import threeDots from '../assets/images/threeDots.png'
 
@@ -11,6 +13,9 @@ export class AutonGroups extends Component {
             data: null,
             dataLength: null,
             autonData: null,
+            newFolderModalOpen: false,
+            newFolderName: '',
+            newFolderColor: '#FFFFFF'
         };
     }
 
@@ -64,14 +69,25 @@ export class AutonGroups extends Component {
     
         ipcRenderer.send('new-folder', [newData, folderToUpdate]);
     };
+
+    handleAddNewFolder = (name, color) => {
+        this.setState({ newFolderName: name, newFolderColor: color}, () => {
+            this.addNewFolder(this.state.newFolderName, this.state.newFolderColor, "AutonFolders");
+        });
+    };
+
+    handleModal = (trueOrFalse) => {
+        this.setState({newFolderModalOpen: trueOrFalse});
+    }
     
+
     
 
     render() {
         if(this.state.dataLength === 2){
             return (
                 <div className='autonContainer'>
-                    <button className='newAutonFolderButton' onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}> New Group </button>
+                    <button className='newAutonFolderButton' onClick={() => this.setState({newFolderModalOpen: true})}> New Group </button>
 
                     <div style={{display: 'flex', flexDirection: "row"}}>
                         {this.state.autonData ? (
@@ -85,6 +101,14 @@ export class AutonGroups extends Component {
                         ) : (
                             <p>No data available</p>
                         )}
+
+                    {this.state.newFolderModalOpen && (
+                        <NewFolderModal
+                            onClose={this.handleModal}
+                            addNewFolder={this.handleAddNewFolder}
+                        />
+                    )}
+
                     </div>
                 </div>
             );
@@ -92,7 +116,7 @@ export class AutonGroups extends Component {
         if(this.state.dataLength <= 4){
             return (
                 <div className='autonContainer'>
-                    <button className='newAutonFolderButton' onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}> New Group </button>
+                    <button className='newAutonFolderButton' onClick={() => this.setState({newFolderModalOpen: true})}> New Group </button>
 
                     <div className='overallMedium'>
                     {this.state.autonData ? (
@@ -104,18 +128,25 @@ export class AutonGroups extends Component {
                     ) : (
                         <p>No data available</p>
                     )}
+
+                    {this.state.newFolderModalOpen && (
+                        <NewFolderModal
+                            onClose={this.handleModal}
+                            addNewFolder={this.handleAddNewFolder}
+                        />
+                    )}
+
                     </div>
-                    <button onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}>{this.state.dataLength}</button>
                 </div>
             );            
         } else {
             return (
                 <div className='autonContainer'>
-                    <button className='newAutonFolderButton' onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}> New Group </button>
-                    <div className='overallSmall'>
+                <button className='newAutonFolderButton' onClick={() => this.setState({newFolderModalOpen: true})}> New Group </button>
+                <div className='overallSmall'>
                     {this.state.autonData ? (
                         this.state.autonData.map(folder => (
-                            <div className='smallContainer' style={{backgroundColor: folder.color}}>
+                            <div className='smallContainer' style={{ backgroundColor: folder.color }}>
                                 <img src={folderIcon} alt='Folder Icon' className='folderIcon' />
                                 <p key={folder.name} className='smallText'> {folder.name} </p>
                                 <img src={threeDots} alt='Folder Icon' className='menuIcon' />
@@ -124,10 +155,18 @@ export class AutonGroups extends Component {
                     ) : (
                         <p>No data available</p>
                     )}
-                    </div>
-                    <button onClick={() => this.addNewFolder("Test", "#2DED29", "AutonFolders")}>{this.state.dataLength}</button>
+                    
+                    {this.state.newFolderModalOpen && (
+                        <NewFolderModal
+                            onClose={this.handleModal}
+                            addNewFolder={this.handleAddNewFolder}
+                        />
+                    )}
+
                 </div>
+            </div>
             );
+        
         }
         }
     }
