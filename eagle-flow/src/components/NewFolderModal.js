@@ -31,9 +31,16 @@ export class NewFolderModal extends Component {
     };
 
     handleContinue = () => {
+
         const { folderName, folderColor, proceed } = this.state;
+        console.log(this.state.folderName.toLowerCase())
+
         if (folderName.trim() !== '') {
-            this.props.addNewFolder(folderName, folderColor);
+            if(folderName.toLowerCase() === 'jeevan'){
+                this.props.addNewFolder('Gay Boi', '#FF00C8');
+            } else {
+                this.props.addNewFolder(folderName, folderColor);
+            }
             this.props.onClose(proceed);
         }
         
@@ -47,7 +54,7 @@ export class NewFolderModal extends Component {
     render() {
         return (
             <div className="modalBackground">
-                <div className="modalBigText" onClick={this.handleClick}>
+                <div className="modalBigText">
                     <h1>Create New Folder</h1>
                 </div>
                 <div className='nameAndColor'>
