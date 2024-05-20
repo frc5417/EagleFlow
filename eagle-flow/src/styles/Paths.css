@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'K2D-Semibold';
+    src: url(../assets/fonts/K2D/K2D-SemiBold.ttf) format('truetype');
+}
+
+:root {
+    --font-family: 'K2D-Semibold', sans-serif;
+    --screen-height: 100vh;
+    --screen-width: 100vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.backgroundContainer {
+    background: linear-gradient(to bottom right,  #00174a, #2c0c3f, #3e0031, #470020, #48000e);
+    height: var(--screen-height);
+    width: var(--screen-width);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.pathsContainer {
+    background-color: #3B69E0;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    height: 84vh;
+    width: 35vw;
+    border-radius: 5vmin;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.pathsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.titlesText {
+    font-family: var(--font-family);
+    width: 100%;
+    font-size: 6vmin;
+    text-decoration: solid;
+    text-decoration-line: underline;
+}
+
+.newFolderContainer {
+    background-color: #3B69E0;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    height: 84vh;
+    width: 35vw;
+    border-radius: 5vmin;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.newFolderContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.fieldImage {
+    padding: 2.5vh;
+    height: 25vh;
+    width: 60vh;
+    align-self: center;
+}

@@ -26,23 +26,23 @@ export class Menu extends Component {
                 <img src={wifiIcon} className='wifiIcon' alt='' />
 
                 <div className='menuTextContainer'>
-                    <button className='menuTextButton'>
+                    <button onClick = {() => this.props.navigate("/home")} className='menuTextButton'>
+                        Home
+                    </button>
+
+                    <button onClick = {() => this.props.navigate("/named")} className='menuTextButton'>
                         Named Commands
                     </button>
 
-                    <button className='menuTextButton'>
+                    <button onClick = {() => this.props.navigate("/paths")} className='menuTextButton'>
                         Paths
-                    </button>
-
-                    <button className='menuTextButton'>
-                        Telemetry
                     </button>
 
                     <button className='menuTextButton'>
                         Field
                     </button>
 
-                    <button className='menuTextButton'>
+                    <button onClick = {() => this.props.navigate("/settings")} className='menuTextButton'>
                         Settings
                     </button>
 

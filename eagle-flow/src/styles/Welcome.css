@@ -36,7 +36,6 @@
     height: 50vh;
     align-self: center;
     border-radius: 5vh;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +51,7 @@
     color: #ffffff;
     font-size: 3vmax;
     padding: 1vmin;
-    margin: 5vmin;;
+    margin: 5vmin;
 }
 
 .uploadButton {

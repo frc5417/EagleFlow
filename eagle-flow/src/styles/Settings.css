@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'K2D-Semibold';
+    src: url(../assets/fonts/K2D/K2D-SemiBold.ttf) format('truetype');
+}
+
+:root {
+    --font-family: 'K2D-Semibold', sans-serif;
+    --screen-height: 100vh;
+    --screen-width: 100vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.backgroundContainer {
+    background: linear-gradient(to bottom right, #00174a, #2c0c3f, #3e0031, #470020, #48000e);
+    height: var(--screen-height);
+    width: var(--screen-width);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.settingsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.driverStationSettingsContainer {
+    background-color: blue;
+    width: 35vw;
+    height: 30vh;
+    border-radius: 2vmax;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.robotSettingsContainer {
+    background-color: blue;
+    width: 35vw;
+    height: 50vh;
+    border-radius: 2vmax;
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsText {
+    font-family: var(--font-family);
+    color: black;
+    font-size: 2.25vmax;
+    padding: 1vmin;
+    text-decoration: solid;
+    text-decoration-line: underline;
+}
+
+.userProfileContainer {
+    background-color: white;
+    width: 15vw;
+    height: 30vh;
+    margin-left: 15vw;
+    margin-top: 8vh;
+    overflow: visible;
+    border-radius: 50vmax;
+}
+
+.userProfileText {
+    font-family: var(--font-family);
+    color: black;
+    font-size: 2.5vmax;
+    padding: 1vmin;
+    text-decoration: solid;
+    text-decoration-line: underline;
+    align-self: center;
+    margin-top: 30vh;
+}
+
+.driverStationOptions {
+    background-color: rgba(217, 217, 217, 50%);
+    width: 20vw;
+    height: 5vw;
+    border-radius: 2vmax;
+    text-align: center;
+    position: relative; 
+    z-index: 1; 
+    margin-left: 1vw;
+}
+
+.optionsText {
+    font-family: var(--font-family);
+    color: white;
+    font-size: 1.75vmax;
+}
+
+.looksmaxxing {
+    background-color: rgba(0, 0, 0, 50%);
+    border: 2px solid transparent;
+    border-radius: 5vmax;
+    color: #6c63ff;
+    font-size: 16px;
+    padding: 1vh;
+    width: 5vw;
+    z-index: 2;
+    text-align: center;
+}
+
+.looksmaxxing::placeholder {
+    color: #6c63ff;
+}
+
+.looksmaxxing::-webkit-inner-spin-button,
+.looksmaxxing::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

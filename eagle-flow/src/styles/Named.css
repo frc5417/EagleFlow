@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'K2D-Semibold';
+    src: url(../assets/fonts/K2D/K2D-SemiBold.ttf) format('truetype');
+}
+
+:root {
+    --font-family: 'K2D-Semibold', sans-serif;
+    --screen-height: 100vh;
+    --screen-width: 100vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.backgroundContainer {
+    background: linear-gradient(to bottom right, #00174a, #2c0c3f, #3e0031, #470020, #48000e);
+    height: var(--screen-height);
+    width: var(--screen-width);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.namedContainer {
+    background-color: blue;
+    margin-right: 2vw;
+    margin-left: 1.5vw;
+    margin-top: 2vw;
+    height: 84vh;
+    width: 75vw;
+    border-radius: 5vmin;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.title {
+    width: 100%;
+    margin-top: 1vh;
+    margin-left: 3vw;
+    font-size: 6vmin;
+    font-family: var(--font-family);
+    text-decoration: solid;
+    text-decoration-line: underline;
+}
+
+.commandContainer {
+    background: #8b98cd;
+    width: 72.5vw;
+    height: 10vh;
+    border-radius: 5vh;
+    margin-top: 5vh;
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.commandText {
+    font-family: var(--font-family);
+    color: white;
+    font-size: 2.5vmax;
+    padding: 1vmin;
+    margin: 2.5vmin;
+}
+
+.newCommandButton {
+    background-color: rgba(217, 217, 217, 0.5);
+    height: 5vh;
+    width: 15vw;
+    margin-top: -5.5vh;
+    border-radius: 2vh;
+    align-self: flex-end;
+    margin-right: 2vw;
+    font-family: var(--font-family);
+    font-size: 2vh;
+    color: #FFFFFF;
+}

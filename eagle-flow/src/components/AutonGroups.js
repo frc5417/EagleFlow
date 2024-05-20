@@ -81,8 +81,6 @@ export class AutonGroups extends Component {
     }
     
 
-    
-
     render() {
         if(this.state.dataLength === 2){
             return (
@@ -99,7 +97,7 @@ export class AutonGroups extends Component {
                                 </div>
                             ))
                         ) : (
-                            <p>No data available</p>
+                            <p> No data available </p>
                         )}
 
                     {this.state.newFolderModalOpen && (
@@ -126,7 +124,7 @@ export class AutonGroups extends Component {
                             </div>
                         ))
                     ) : (
-                        <p>No data available</p>
+                        <p> No data available </p>
                     )}
 
                     {this.state.newFolderModalOpen && (
@@ -153,7 +151,7 @@ export class AutonGroups extends Component {
                             </div>
                         ))
                     ) : (
-                        <p>No data available</p>
+                        <p> No data available </p>
                     )}
                     
                     {this.state.newFolderModalOpen && (
@@ -166,7 +164,6 @@ export class AutonGroups extends Component {
                 </div>
             </div>
             );
-        
         }
         }
     }

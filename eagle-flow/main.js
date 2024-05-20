@@ -33,8 +33,6 @@ app.on('window-all-closed', () => {
   }
 });
 
-
-
 app.on('will-quit', () => {
   globalShortcut.unregisterAll()
 })
@@ -60,8 +58,15 @@ ipcMain.on('upload-folder', (event, data) => {
           },
         ],
         PathFolders: [
-          { name: "Blue" },
-          { name: "Red" },
+          { 
+            name: "Blue" 
+          },
+          { 
+            name: "Red" 
+          },
+        ],
+        NamedCommands: [
+          {}
         ],
       }
     }
