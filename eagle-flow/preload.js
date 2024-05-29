@@ -13,6 +13,9 @@ contextBridge.exposeInMainWorld(
       removeAllListeners: (channel, data) => {
         ipcRenderer.removeAllListeners(channel, data);
       },
+      removeListener: (channel, data) => {
+        ipcRenderer.removeListener(channel, data);
+      },
       once: (channel, data) => {
         ipcRenderer.once(channel, data);
       }

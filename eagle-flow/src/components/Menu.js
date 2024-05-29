@@ -10,7 +10,10 @@ export class Menu extends Component {
 
         var wifiIcon = wifiDisonnectedIcon;
 
+        const ipcRenderer = window.electron.ipcRenderer;
+
         const newProject = () => {
+            ipcRenderer.send('new-project');
             this.props.navigate("/");
         }
 
